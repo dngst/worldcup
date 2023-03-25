@@ -44,3 +44,15 @@ svg {
   fill: maroon;
   r: 7;
 }
+
+.y-axis-label {
+  transform: rotate(-90deg);
+  fill: black;
+  font-size: 1.4em;
+  text-anchor: middle;
+}
+
+.x-axis-label {
+  fill: black;
+  font-size: 1.4em;
+}

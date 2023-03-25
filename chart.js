@@ -11,8 +11,8 @@ async function drawChart() {
     width: width,
     height: width * 0.6,
     margin: {
-      top: 20,
-      right: 20,
+      top: 10,
+      right: 10,
       bottom: 50,
       left: 60
     }
@@ -76,6 +76,18 @@ async function drawChart() {
   const yAxis = bounds.append("g")
     .call(yAxisGenerator)
       .attr("id", "y-axis")
+
+  const yAxisLabel = yAxis.append("text")
+    .attr("x", -dimensions.boundedWidth / 4)
+    .attr("y", -dimensions.margin.left + 10)
+    .attr("class", "y-axis-label")
+    .text("Attendance")
+
+  const xAxisLabel = xAxis.append("text")
+    .attr("x", dimensions.boundedWidth / 2)
+    .attr("y", dimensions.margin.bottom - 10)
+    .attr("class", "x-axis-label")
+    .text("Year")
 
   // set up interactions
   const tooltip = d3.select("#tooltip")
