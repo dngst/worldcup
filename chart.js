@@ -59,6 +59,7 @@ async function drawChart() {
       .attr("cx", d => xScale(xAccessor(d)))
       .attr("cy", dimensions.boundedHeight)
       .attr("r", 5)
+      .attr("fill", d => d.stage == "FINAL ROUND"? "maroon" : "cornflowerblue")
       .transition().duration(4000)
         .attr("cy", d => yScale(yAccessor(d)))
 
@@ -88,6 +89,21 @@ async function drawChart() {
     .attr("y", dimensions.margin.bottom - 10)
     .attr("class", "x-axis-label")
     .text("Year")
+
+  const legend = bounds.append("g")
+    .attr("id", "legend")
+
+  legend.append("circle")
+    .attr("cx", 760)
+    .attr("cy", 14)
+    .attr("r", 7)
+    .attr("class", "legend-dot")
+
+  legend.append("text")
+    .attr("x", 630)
+    .attr("y", 21)
+    .text("FINAL ROUND")
+    .attr("fill", "black")
 
   // set up interactions
   const tooltip = d3.select("#tooltip")

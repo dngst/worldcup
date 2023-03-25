@@ -34,8 +34,11 @@ svg {
   content: '';
 }
 
+.legend-dot {
+  fill: maroon;
+}
+
 .dot {
-  fill: cornflowerblue;
   stroke: #FFFFFF;
   stroke-width: 0.5;
 }
