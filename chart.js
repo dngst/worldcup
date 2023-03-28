@@ -119,6 +119,8 @@ async function drawChart() {
       .text(`Year: ${d.year}`)
     tooltip.select("#stage")
       .text(`${d.stage}`)
+    tooltip.select("#home_team")
+      .text(`Home: ${homeTeam(d)}`)
     tooltip.style("opacity", 0.9)
   }
 
@@ -129,6 +131,16 @@ async function drawChart() {
 
   function onMouseLeave() {
     tooltip.style("opacity", 0)
+  }
+
+  function homeTeam(d) {
+    if(d.team1 == d.home) {
+      return d.team1
+    } else if(d.team2 == d.home){
+      return d.team2
+    } else {
+      return "Other"
+    }
   }
 }
 
