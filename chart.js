@@ -67,6 +67,7 @@ async function drawChart() {
   const xAxisGenerator = d3.axisBottom()
     .scale(xScale)
       .tickFormat(d3.format("d"))
+      .ticks(18)
   const xAxis = bounds.append("g")
     .call(xAxisGenerator)
       .attr("id", "x-axis")
