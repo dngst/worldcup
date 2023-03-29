@@ -60,7 +60,7 @@ async function drawChart() {
       .attr("cy", dimensions.boundedHeight)
       .attr("r", 5)
       .attr("fill", d => d.stage == "FINAL ROUND"? "maroon" : "cornflowerblue")
-      .transition().duration(4000)
+      .transition().duration(2000).ease(d3.easeLinear)
         .attr("cy", d => yScale(yAccessor(d)))
 
   // draw peripherals
