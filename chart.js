@@ -93,18 +93,16 @@ async function drawChart() {
 
   const legend = bounds.append("g")
     .attr("id", "legend")
+    .attr("transform", `translate(${dimensions.boundedWidth}, 0)`)
 
   legend.append("circle")
-    .attr("cx", 760)
-    .attr("cy", 14)
     .attr("r", 7)
     .attr("class", "legend-dot")
 
   legend.append("text")
-    .attr("x", 630)
-    .attr("y", 21)
+    .attr("x", -70)
     .text("FINAL ROUND")
-    .attr("fill", "black")
+    .attr("class", "legend-text")
 
   // set up interactions
   const tooltip = d3.select("#tooltip")

@@ -39,6 +39,12 @@ svg {
   fill: maroon;
 }
 
+.legend-text{
+  fill: black;
+  text-anchor: middle;
+  alignment-baseline: middle;
+}
+
 .dot {
   stroke: #FFFFFF;
   stroke-width: 0.5;
