@@ -52,7 +52,9 @@ async function drawChart() {
   const dots = bounds.selectAll("circle")
     .data(dataset)
     .enter().append("circle")
-      .on("mouseenter", onMouseEnter)
+      .on("mouseenter", function(e, datum) {
+        onMouseEnter(datum)
+      })
       .on("mousemove", onMouseMove)
       .on("mouseleave", onMouseLeave)
       .attr("class", "dot")
@@ -108,8 +110,7 @@ async function drawChart() {
   const tooltip = d3.select("#tooltip")
     .attr("class", "tooltip")
 
-  function onMouseEnter() {
-    d = d3.select(this).datum()
+  function onMouseEnter(d) {
     tooltip.select("#teams")
       .text(`${d.team1} vs ${d.team2} (${d.goals})`)
     tooltip.select("#attendance")
