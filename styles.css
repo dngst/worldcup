@@ -43,6 +43,7 @@ svg {
   fill: black;
   text-anchor: middle;
   alignment-baseline: middle;
+  dominant-baseline: middle;
 }
 
 .dot {
