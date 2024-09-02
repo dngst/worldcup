@@ -125,8 +125,8 @@ async function drawChart() {
   }
 
   function onMouseMove() {
-    tooltip.style("left", `${event.pageX + 20}px`)
-    tooltip.style("top", `${event.pageY}px`)
+    tooltip.style("left", `${event.pageX + 8}px`)
+    tooltip.style("top", `${event.pageY - 130}px`)
   }
 
   function onMouseLeave() {
